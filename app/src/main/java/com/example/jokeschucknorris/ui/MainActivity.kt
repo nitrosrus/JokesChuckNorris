@@ -1,6 +1,7 @@
 package com.example.jokeschucknorris.ui
 
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import com.example.jokeschucknorris.App
 import com.example.jokeschucknorris.R
 import com.example.jokeschucknorris.mvp.presenter.MainPresenter
@@ -36,18 +37,17 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     override fun buttonJoke() {
         presenter.goToJoke()
         btn_joke_fragment.setImageResource(R.drawable.ic_buffoon_on)
-
         btn_web_fragment.setImageResource(R.drawable.ic_web_off)
+        supportActionBar.let { t -> setTitle(R.string.app_name) }
+
     }
 
     override fun buttonWeb() {
         presenter.goToWeb()
         btn_joke_fragment.setImageResource(R.drawable.ic_buffoon_off)
         btn_web_fragment.setImageResource(R.drawable.ic_web_on)
-
+        supportActionBar.let { t -> setTitle("Api info") }
     }
-
-
 
 
     override fun onResumeFragments() {

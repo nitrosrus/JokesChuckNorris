@@ -2,7 +2,7 @@ package com.example.jokeschucknorris.ui
 
 
 import com.example.jokeschucknorris.ui.fragments.JokesFragment
-import com.example.jokeschucknorris.ui.fragments.WebViewFragment
+import com.example.jokeschucknorris.ui.fragments.ApiWebViewFragment
 
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
@@ -14,7 +14,7 @@ class Screens {
     }
 
     class webScreen : SupportAppScreen() {
-        override fun getFragment() = WebViewFragment.newInstance()
+        override fun getFragment() = ApiWebViewFragment.newInstance()
 
 
     }
