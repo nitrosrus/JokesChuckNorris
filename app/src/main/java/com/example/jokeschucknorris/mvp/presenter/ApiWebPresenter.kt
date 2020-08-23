@@ -6,7 +6,9 @@ import moxy.MvpPresenter
 
 @InjectViewState
 class ApiWebPresenter : MvpPresenter<ApiWebView>() {
+
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
+        viewState.loadApi()
     }
 }
