@@ -54,9 +54,15 @@ class JokesFragment : MvpAppCompatFragment(), JokesView {
         adapter?.notifyDataSetChanged()
     }
 
-    override fun btnUpdate() {
-        btn_reload.setOnClickListener({ presenter.loadJokes(tv_counter.text.toString().toInt()) })
+    override fun btnReload() {
+        btn_reload.setOnClickListener {
+            presenter.converterText(tv_counter.text)
+
+        }
+
+
     }
+
 
     override fun setJoke(text: String) {
         tv_joke?.text = text

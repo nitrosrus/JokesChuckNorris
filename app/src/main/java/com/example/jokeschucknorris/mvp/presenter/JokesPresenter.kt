@@ -1,6 +1,8 @@
 package com.example.jokeschucknorris.mvp.presenter
 
 
+import android.text.Editable
+import com.example.jokeschucknorris.R
 import com.example.jokeschucknorris.mvp.model.JokesRepos
 import com.example.jokeschucknorris.mvp.model.entity.ValueJoke
 import com.example.jokeschucknorris.mvp.view.JokeItemView
@@ -32,7 +34,7 @@ class JokesPresenter(
         super.onFirstViewAttach()
         viewState.init()
         //loadJokes(1)
-        viewState.btnUpdate()
+        viewState.btnReload()
 
     }
 
@@ -45,6 +47,12 @@ class JokesPresenter(
             }, {
 
             })
+    }
+
+    fun converterText(text: Editable?) {
+        if (text.isNullOrEmpty() ) {
+        } else loadJokes(text.toString().toInt())
+
     }
 
 

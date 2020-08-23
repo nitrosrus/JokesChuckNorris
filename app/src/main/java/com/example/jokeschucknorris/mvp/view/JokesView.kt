@@ -8,6 +8,6 @@ import moxy.viewstate.strategy.StateStrategyType
 interface JokesView : MvpView {
     fun init()
     fun updateList()
-    fun btnUpdate()
+    fun btnReload()
     fun setJoke(text: String)
 }
