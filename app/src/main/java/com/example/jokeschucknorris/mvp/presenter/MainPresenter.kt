@@ -17,11 +17,11 @@ class MainPresenter(val router: Router) : MvpPresenter<MainView>() {
     }
 
     fun goToJoke() {
-
         router.navigateTo(Screens.JokesScreen())
     }
     fun goToWeb() {
-        //router.navigateTo(Screens.webScreen())
+        router.navigateTo(Screens.webScreen())
     }
+
 
 }

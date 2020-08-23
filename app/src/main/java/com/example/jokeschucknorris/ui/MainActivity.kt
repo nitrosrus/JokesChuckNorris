@@ -21,8 +21,8 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btn_joke_fragment.setOnClickListener({buttonJoke()})
-        btn_web_fragment.setOnClickListener({buttonWeb()})
+        btn_joke_fragment.setOnClickListener({ buttonJoke() })
+        btn_web_fragment.setOnClickListener({ buttonWeb() })
 
     }
 
@@ -34,12 +34,21 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     }
 
     override fun buttonJoke() {
-       presenter.goToJoke()
+        presenter.goToJoke()
+        btn_joke_fragment.setImageResource(R.drawable.ic_buffoon_on)
+
+        btn_web_fragment.setImageResource(R.drawable.ic_web_off)
     }
 
     override fun buttonWeb() {
-     presenter.goToWeb()
+        presenter.goToWeb()
+        btn_joke_fragment.setImageResource(R.drawable.ic_buffoon_off)
+        btn_web_fragment.setImageResource(R.drawable.ic_web_on)
+
     }
+
+
+
 
     override fun onResumeFragments() {
         super.onResumeFragments()
@@ -54,3 +63,5 @@ class MainActivity : MvpAppCompatActivity(), MainView {
 
 
 }
+
+

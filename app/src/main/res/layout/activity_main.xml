@@ -8,8 +8,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/linearLayoutCompat"
-        >
+        android:layout_above="@id/linearLayoutCompat">
 
     </FrameLayout>
 
@@ -19,24 +18,52 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:paddingBottom="16dp"
-        >
+        android:paddingBottom="16dp">
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/btn_joke_fragment"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/cardview_shadow_end_color"
-            android:src="@drawable/ic_buffoon" />
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/btn_web_fragment"
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_joke_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@null"
+                android:src="@drawable/ic_buffoon_on" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_btn_joke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Jokes"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/cardview_shadow_end_color"
-            android:src="@drawable/ic_web" />
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_web_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@null"
+                android:src="@drawable/ic_web_off" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_btn_web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Web" />
+        </LinearLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>
