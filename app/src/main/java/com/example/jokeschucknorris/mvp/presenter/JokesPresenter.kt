@@ -44,12 +44,12 @@ class JokesPresenter(
                 jokeListPresenter.jokes.addAll(data.value)
                 viewState.updateList()
             }, {
-                println("qwerty joke chukkk")
+
             })
     }
 
     fun converterText(text: Editable?) {
-        if (!text.isNullOrEmpty())loadJokes(text.toString().toInt())
+        if (!text.isNullOrEmpty()) loadJokes(text.toString().toDouble().toInt())
 
     }
 
