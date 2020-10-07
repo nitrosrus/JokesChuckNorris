@@ -1,5 +1,6 @@
 package com.example.jokeschucknorris.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.example.jokeschucknorris.App
@@ -36,16 +37,16 @@ class MainActivity : MvpAppCompatActivity(), MainView {
 
     override fun buttonJoke() {
         presenter.goToJoke()
-        btn_joke_fragment.setImageResource(R.drawable.ic_buffoon_on)
-        btn_web_fragment.setImageResource(R.drawable.ic_web_off)
+        btn_joke_fragment.setColorFilter(Color.parseColor("#039BE5"))
+        btn_web_fragment.setColorFilter(Color.parseColor("#FF000000"))
         supportActionBar.let { t -> setTitle(R.string.app_name) }
 
     }
 
     override fun buttonWeb() {
         presenter.goToWeb()
-        btn_joke_fragment.setImageResource(R.drawable.ic_buffoon_off)
-        btn_web_fragment.setImageResource(R.drawable.ic_web_on)
+        btn_joke_fragment.setColorFilter(Color.parseColor("#FF000000"))
+        btn_web_fragment.setColorFilter(Color.parseColor("#039BE5"))
         supportActionBar.let { t -> setTitle("Api info") }
     }
 
