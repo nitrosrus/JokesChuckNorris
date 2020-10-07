@@ -23,7 +23,7 @@ class JokesPresenter(
         override fun getCount() = jokes.size
         override fun bindView(view: JokeItemView) {
             val valueJoke = jokes[view.pos]
-            view.setTextJoke(valueJoke.joke.toString())
+            view.setTextJoke(valueJoke.joke)
 
         }
     }
@@ -33,7 +33,6 @@ class JokesPresenter(
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         viewState.init()
-        //loadJokes(1)
         viewState.btnReload()
 
     }
@@ -45,13 +44,12 @@ class JokesPresenter(
                 jokeListPresenter.jokes.addAll(data.value)
                 viewState.updateList()
             }, {
-
+                println("qwerty joke chukkk")
             })
     }
 
     fun converterText(text: Editable?) {
-        if (text.isNullOrEmpty() ) {
-        } else loadJokes(text.toString().toInt())
+        if (!text.isNullOrEmpty())loadJokes(text.toString().toInt())
 
     }
 
